@@ -11,10 +11,14 @@ jobs:
           token: ${{ secrets.TOKEN_PERFIL }}
           user: emcabana
           template: classic
-          base: header, activity, community, repositories
+          # 📦 SE AGREGA 'packages' PARA MOSTRAR LAS DESCARGAS DE TUS PAQUETES:
+          base: header, activity, community, repositories, packages
           config_timezone: America/Montevideo
           
-          # 📊 ESTAS LÍNEAS ACTIVAN LOS GRÁFICOS:
+          # 📊 MÓDULO DE TRÁFICO (Muestra visitas y clones de tus repositorios):
+          plugin_traffic: yes
+          
+          # 💻 MÓDULO DE LENGUAJES (El que ya te funcionaba):
           plugin_languages: yes
           plugin_languages_colors: github
           plugin_languages_limit: 8
@@ -22,4 +26,4 @@ jobs:
           plugin_languages_sections: most-used
           plugin_languages_details: percentage
           
-          plugin_lines: yes # Muestra líneas de código añadidas/borradas
+          plugin_lines: yes
